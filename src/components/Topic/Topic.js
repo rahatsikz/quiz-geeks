@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Topic = ({ topic }) => {
-  const { name, logo, total } = topic;
+  const { name, logo, total, id } = topic;
+
+  const navigate = useNavigate();
+  const handleOpen = (id) => {
+    navigate(`/${id}`);
+  };
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure className=" bg-slate-200">
@@ -13,7 +19,9 @@ const Topic = ({ topic }) => {
           <p>Total Quiz: {total} </p>
         </div>
         <div className="card-actions justify-center">
-          <button className="btn btn-primary">Start Practice</button>
+          <button className="btn btn-primary" onClick={() => handleOpen(id)}>
+            Start Practice
+          </button>
         </div>
       </div>
     </div>
