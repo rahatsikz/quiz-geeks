@@ -1,10 +1,27 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import Option from "../Option/Option";
 
 const Question = ({ individualQ, index }) => {
   const { options, question, correctAnswer } = individualQ;
+  const customId = "custom-id-yes";
+  const customId2 = "custom-id-no";
+  const handleCheck = (clickedOption) => {
+    if (clickedOption.individualOpt === correctAnswer) {
+      toast.success("You are correct", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        toastId: customId,
+      });
+    } else {
+      toast.error("Wrong Answer !", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        toastId: customId2,
+      });
+    }
+  };
   return (
     <div className="card bg-base-400 xl:w-2/4 mx-auto shadow-xl mt-8 bg-white">
       <div className="card-body">
@@ -34,8 +51,13 @@ const Question = ({ individualQ, index }) => {
 
         <div className="grid xl:grid-cols-2 gap-4 2xl:w-2/4 mx-auto">
           {options.map((individualOpt, idx) => (
-            <Option key={idx} individualOpt={individualOpt}></Option>
+            <Option
+              key={idx}
+              individualOpt={individualOpt}
+              handleCheck={handleCheck}
+            ></Option>
           ))}
+          <ToastContainer />
         </div>
       </div>
     </div>
