@@ -5,12 +5,29 @@ import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import Option from "../Option/Option";
 
+export let count = 0;
+
 const Question = ({ individualQ, index }) => {
   const { options, question, correctAnswer } = individualQ;
   const customId = "custom-id-yes";
   const customId2 = "custom-id-no";
+  // const [count, setCount] = useState(0);
+  // const value = { count, setCount };
+
   const handleCheck = (clickedOption) => {
     if (clickedOption.individualOpt === correctAnswer) {
+      // correctCount();
+      // console.log(correctCount());
+      // corArr.push(1);
+      // console.log(corArr);
+      // console.log(corArr.length);
+      count++;
+
+      // const newCount = count + 1;
+      // setCount(newCount);
+      console.log(count);
+      // console.log(value, "useRef");
+
       toast.success("You are correct", {
         position: toast.POSITION.BOTTOM_RIGHT,
         toastId: customId,
