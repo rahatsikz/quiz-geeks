@@ -9,7 +9,7 @@ const Option = ({ individualOpt, idx, handleCheck }) => {
         onClick={() => handleCheck({ individualOpt })}
       >
         <input type="radio" name="q" id={idx} />
-        <div className="pl-2">{individualOpt}</div>
+        <div className="pl-2 overflow-x-auto">{individualOpt}</div>
       </label>
     </div>
   );

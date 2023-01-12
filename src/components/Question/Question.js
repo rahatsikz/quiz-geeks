@@ -5,40 +5,28 @@ import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 import Option from "../Option/Option";
 
-export let count = 0;
-
-const Question = ({ individualQ, index }) => {
+const Question = ({ individualQ, index, setCorrectCount, setWrongCount }) => {
   const { options, question, correctAnswer } = individualQ;
   const customId = "custom-id-yes";
   const customId2 = "custom-id-no";
-  // const [count, setCount] = useState(0);
-  // const value = { count, setCount };
 
   const handleCheck = (clickedOption) => {
     if (clickedOption.individualOpt === correctAnswer) {
-      // correctCount();
-      // console.log(correctCount());
-      // corArr.push(1);
-      // console.log(corArr);
-      // console.log(corArr.length);
-      count++;
-
-      // const newCount = count + 1;
-      // setCount(newCount);
-      console.log(count);
-      // console.log(value, "useRef");
+      setCorrectCount((correctCount) => correctCount + 1);
 
       toast.success("You are correct", {
         position: toast.POSITION.BOTTOM_RIGHT,
         toastId: customId,
       });
     } else {
+      setWrongCount((wrongCount) => wrongCount + 1);
       toast.error("Wrong Answer !", {
         position: toast.POSITION.BOTTOM_RIGHT,
         toastId: customId2,
       });
     }
   };
+
   return (
     <div className="card bg-base-400 xl:w-2/4 mx-auto shadow-xl mt-8 bg-white">
       <div className="card-body">

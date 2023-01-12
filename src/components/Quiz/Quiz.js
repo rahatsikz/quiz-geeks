@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import Question, { count } from "../Question/Question";
-
-// export let correctAnswer;
-// export let correctCount = (count = 0) => count + 1;
+import Question from "../Question/Question";
 
 const Quiz = () => {
   const quiz = useLoaderData().data;
   const { name, questions } = quiz;
-  // const { count, setCount } = useContext(myContext);
-  // console.log(count, setCount);
-  const corr = count;
-  console.log(corr);
+
+  const [correctCount, setCorrectCount] = useState(0);
+  // console.log(correctCount);
+  const [wrongCount, setWrongCount] = useState(0);
 
   return (
     <div className="xl:flex">
@@ -23,14 +20,16 @@ const Quiz = () => {
               key={individualQ.id}
               individualQ={individualQ}
               index={index}
+              setCorrectCount={setCorrectCount}
+              setWrongCount={setWrongCount}
             ></Question>
           ))}
         </div>
       </div>
-      <div>
-        <div className="sticky top-20">
-          <h3>Correct Answer: {corr}</h3>
-          <h3>Wrong Answer:</h3>
+      <div className="mx-auto text-center">
+        <div className="sticky top-20 text-lg font-medium">
+          <h3 className="text-green-500">Correct Answer: {correctCount / 2}</h3>
+          <h3 className="text-red-500">Wrong Answer: {wrongCount / 2} </h3>
         </div>
       </div>
     </div>
