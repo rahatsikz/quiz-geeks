@@ -26,7 +26,7 @@ const Quiz = () => {
           ))}
         </div>
       </div>
-      <div className="mx-auto text-center">
+      <div className="mx-auto text-center p-5">
         <div className="sticky top-20 text-lg font-medium">
           <h3 className="text-green-500">Correct Answer: {correctCount / 2}</h3>
           <h3 className="text-red-500">Wrong Answer: {wrongCount / 2} </h3>

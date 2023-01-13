@@ -6,7 +6,7 @@ const Topic = ({ topic }) => {
 
   const navigate = useNavigate();
   const handleOpen = (id) => {
-    navigate(`/${id}`);
+    navigate(`/topic/${id}`);
   };
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
