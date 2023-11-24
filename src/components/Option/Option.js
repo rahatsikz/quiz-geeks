@@ -2,7 +2,7 @@ import React from "react";
 
 const Option = ({ individualOpt, idx, handleCheck }) => {
   return (
-    <div className="border border-indigo-500/50 py-4 px-2 rounded-lg">
+    <div className="border border-secondary py-4 px-2 rounded-lg">
       <label
         htmlFor={idx}
         className="flex"

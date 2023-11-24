@@ -19,7 +19,7 @@ const Topic = ({ topic }) => {
           <p>Total Quiz: {total} </p>
         </div>
         <div className="card-actions justify-center">
-          <button className="btn btn-primary" onClick={() => handleOpen(id)}>
+          <button className="btn btn-primary text-white" onClick={() => handleOpen(id)}>
             Start Practice
           </button>
         </div>

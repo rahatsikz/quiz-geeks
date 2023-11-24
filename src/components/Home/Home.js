@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <div className="hero h-[70vh]" style={{ backgroundImage: `url(${bg})` }}>
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-70"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-lg">
             <h1 className="mb-5 text-5xl font-bold">Check your Skill</h1>

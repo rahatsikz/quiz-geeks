@@ -14,21 +14,23 @@ const Question = ({ individualQ, index, setCorrectCount, setWrongCount }) => {
     if (clickedOption.individualOpt === correctAnswer) {
       setCorrectCount((correctCount) => correctCount + 1);
 
-      toast.success("You are correct", {
+      toast.success("You are correct 🎉", {
         position: toast.POSITION.BOTTOM_RIGHT,
+        hideProgressBar: true,
         toastId: customId,
       });
     } else {
       setWrongCount((wrongCount) => wrongCount + 1);
-      toast.error("Wrong Answer !", {
+      toast.error("Wrong Answer 🎃", {
         position: toast.POSITION.BOTTOM_RIGHT,
+        hideProgressBar: true,
         toastId: customId2,
       });
     }
   };
 
   return (
-    <div className="card bg-base-400 xl:w-2/4 mx-auto shadow-xl mt-8 bg-white">
+    <div className="card bg-base-400 xl:w-2/4 mx-auto shadow-md mt-8 bg-white">
       <div className="card-body">
         <div className="flex justify-center items-baseline">
           <h3 className="text-center mb-4 text-lg font-medium">
@@ -41,10 +43,10 @@ const Question = ({ individualQ, index, setCorrectCount, setWrongCount }) => {
           </div>
           <input type="checkbox" id={index} className="modal-toggle" />
           <div className="modal">
-            <div className="modal-box relative">
+            <div className="modal-box relative bg-gray-100 z-50">
               <label
                 htmlFor={index}
-                className="btn btn-sm btn-circle bg-indigo-500 border-0 absolute right-2 top-2"
+                className="btn btn-sm btn-circle bg-secondary text-white border-0 absolute right-2 top-2"
               >
                 ✕
               </label>

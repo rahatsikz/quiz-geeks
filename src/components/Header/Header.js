@@ -33,13 +33,13 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box"
             >
-              <li className="mb-2 text-indigo-500 font-medium">
+              <li className="mb-2 text-secondary font-medium">
                 <NavLink to="/">Topic</NavLink>
               </li>
-              <li className="mb-2 text-indigo-500 font-medium">
+              <li className="mb-2 text-secondary font-medium">
                 <NavLink to="/statistics">Statistics</NavLink>
               </li>
-              <li className="text-indigo-500 font-medium">
+              <li className="text-secondary font-medium">
                 <NavLink to="/blog">Blog</NavLink>
               </li>
             </ul>
@@ -47,13 +47,13 @@ const Header = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="mr-5 text-indigo-500 font-medium">
+            <li className="mr-5 text-secondary font-medium">
               <NavLink to="/">Topic</NavLink>
             </li>
-            <li className="mr-5 text-indigo-500 font-medium">
+            <li className="mr-5 text-secondary font-medium">
               <NavLink to="/statistics">Statistics</NavLink>
             </li>
-            <li className="text-indigo-500 font-medium">
+            <li className="text-secondary font-medium">
               <NavLink to="/blog">Blog</NavLink>
             </li>
           </ul>
